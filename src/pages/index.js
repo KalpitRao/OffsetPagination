@@ -50,15 +50,13 @@ export default function Home() {
 
    
   const handlePageClick = async (data) => {
-    console.log("This is my selected data",data.selected);
+    // console.log("This is my selected data",data.selected);
 
     let currentPage = data.selected + 1;
 
     const commentsFormServer = await fetchComments(currentPage);
 
     setItems(commentsFormServer);
-    // scroll to the top
-    //window.scrollTo(0, 0)
   };
   return (
     <>
