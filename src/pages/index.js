@@ -14,7 +14,7 @@ export default function Home() {
   const [pageCount, setpageCount] = useState(0);
 
   let limit = 10;
-
+  //
   useEffect(() => {
     const getComments = async () => {
       const res = await fetch(
