@@ -1,7 +1,3 @@
-//handlePageClick will be called when someone click on the pagination.
-
-//mxfvcdfkjsvbhjjh
-
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
@@ -26,7 +22,8 @@ export default function Home() {
       );
       const data = await res.json();
       const total = res.headers.get("x-total-count");
-      setpageCount(Math.ceil(total / limit)); 
+      setpageCount(total / limit);    // 500/10 = 50 pages 
+      console.log("divide",total / limit);         // 500/10 = 50 pages 
       setItems(data);
     };
 
@@ -34,10 +31,6 @@ export default function Home() {
   }, [limit]);
 
   console.log(items)
-
-
-  //fetchComments will receive currentPage as its parameter
-  //I will use fetch function.
 
   const fetchComments = async (currentPage) => {
     const res = await fetch(
